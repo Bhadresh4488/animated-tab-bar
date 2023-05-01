@@ -321,8 +321,8 @@ extension RAMAnimatedTabBarController {
 extension RAMAnimatedTabBarController {
     enum Theme {
         public static let tabBarHeight: CGFloat = 49
-        public static let defaultTitleVerticalOffset: CGFloat = 10
-        public static let defaultIconVerticalOffset: CGFloat = -5
+        public static let defaultTitleVerticalOffset: CGFloat = UIApplication.shared.windows.first{$0.isKeyWindow }?.safeAreaInsets.bottom ?? 0 > 10 ? 15 : 5
+        public static let defaultIconVerticalOffset: CGFloat = UIApplication.shared.windows.first{$0.isKeyWindow }?.safeAreaInsets.bottom ?? 0 > 10 ? 0 : -7    
     }
 }
 
